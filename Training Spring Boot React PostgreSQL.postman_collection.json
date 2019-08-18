@@ -1,0 +1,911 @@
+{
+	"info": {
+		"_postman_id": "270d5bcb-928b-4fc6-b932-cc873df44e3f",
+		"name": "Training Spring Boot React PostgreSQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Countries",
+			"item": [
+				{
+					"name": "List countries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/countries",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List countries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/countries",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 06:35:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_embedded\": {\n        \"countries\": [\n            {\n                \"id\": \"IT\",\n                \"name\": \"Italy\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/countries/IT\"\n                    },\n                    \"country\": {\n                        \"href\": \"http://localhost:8080/countries/IT\"\n                    },\n                    \"cities\": {\n                        \"href\": \"http://localhost:8080/countries/IT/cities\"\n                    }\n                }\n            },\n            {\n                \"id\": \"ID\",\n                \"name\": \"Indonesia\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/countries/ID\"\n                    },\n                    \"country\": {\n                        \"href\": \"http://localhost:8080/countries/ID\"\n                    },\n                    \"cities\": {\n                        \"href\": \"http://localhost:8080/countries/ID/cities\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/countries{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"profile\": {\n            \"href\": \"http://localhost:8080/profile/countries\"\n        }\n    },\n    \"page\": {\n        \"size\": 20,\n        \"totalElements\": 2,\n        \"totalPages\": 1,\n        \"number\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get country",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/countries/IT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"IT"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get country XX",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/countries/XX",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"XX"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 07:27:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Get country IT",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/countries/IT",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"IT"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 07:17:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"IT\",\n    \"name\": \"Italy\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/countries/IT\"\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/countries/IT\"\n        },\n        \"cities\": {\n            \"href\": \"http://localhost:8080/countries/IT/cities\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Get country ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/countries/ID",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"ID"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 07:16:48 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ID\",\n    \"name\": \"Indonesia\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/countries/ID\"\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/countries/ID\"\n        },\n        \"cities\": {\n            \"href\": \"http://localhost:8080/countries/ID/cities\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete country",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/countries/MY",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"MY"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete country MY",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/countries/MY",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"MY"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 07:34:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create country Italy",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Italy\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/countries/IT",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"IT"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create country Italy",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Italy\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/countries/IT",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"IT"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/countries/IT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 06:33:45 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"IT\",\n    \"name\": \"Italy\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/countries/IT\"\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/countries/IT\"\n        },\n        \"cities\": {\n            \"href\": \"http://localhost:8080/countries/IT/cities\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create country Indonesia",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Indonesia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/countries/ID",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"ID"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create country Indonesia",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Indonesia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/countries/ID",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"ID"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/countries/ID"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 06:34:39 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ID\",\n    \"name\": \"Indonesia\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/countries/ID\"\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/countries/ID\"\n        },\n        \"cities\": {\n            \"href\": \"http://localhost:8080/countries/ID/cities\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Replace country",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Republic of Indonesia\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/countries/ID",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"countries",
+								"ID"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update country",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Republic of Indonesia\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/countries/ID",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"countries",
+										"ID"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/countries/ID"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 07:35:18 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"ID\",\n    \"name\": \"Republic of Indonesia\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/countries/ID\"\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/countries/ID\"\n        },\n        \"cities\": {\n            \"href\": \"http://localhost:8080/countries/ID/cities\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "List cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List cities",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/cities",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 08:41:09 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_embedded\": {\n        \"cities\": [\n            {\n                \"id\": 1,\n                \"name\": \"Rome\",\n                \"shortDesc\": \"is a historical powerhouse\",\n                \"timeZone\": \"Europe/Rome\",\n                \"fileName\": \"rome.jpg\",\n                \"temperatureCelsius\": null,\n                \"weather\": \"Scattered clouds\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/cities/1\"\n                    },\n                    \"city\": {\n                        \"href\": \"http://localhost:8080/cities/1{?projection}\",\n                        \"templated\": true\n                    },\n                    \"country\": {\n                        \"href\": \"http://localhost:8080/cities/1/country\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/cities{?page,size,sort,projection}\",\n            \"templated\": true\n        },\n        \"profile\": {\n            \"href\": \"http://localhost:8080/profile/cities\"\n        }\n    },\n    \"page\": {\n        \"size\": 20,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"number\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create city Rome",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"country\": \"/countries/IT\",\n\t\"name\": \"Rome\",\n\t\"shortDesc\": \"is a historical powerhouse\",\n\t\"timeZone\": \"Europe/Rome\",\n\t\"fileName\": \"rome.jpg\",\n\t\"temperatureCelcius\": -2,\n\t\"weather\": \"Scattered clouds\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/cities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create city Rome",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"country\": \"/countries/IT\",\n\t\"name\": \"Rome\",\n\t\"shortDesc\": \"is a historical powerhouse\",\n\t\"timeZone\": \"Europe/Rome\",\n\t\"fileName\": \"rome.jpg\",\n\t\"temperatureCelcius\": -2,\n\t\"weather\": \"Scattered clouds\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/cities",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cities"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/cities/1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 08:28:29 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Rome\",\n    \"shortDesc\": \"is a historical powerhouse\",\n    \"timeZone\": \"Europe/Rome\",\n    \"fileName\": \"rome.jpg\",\n    \"temperatureCelsius\": null,\n    \"weather\": \"Scattered clouds\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/cities/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/cities/1{?projection}\",\n            \"templated\": true\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/cities/1/country\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cities/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get city and related",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cities/1?projection=cityRelated",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cities",
+								"1"
+							],
+							"query": [
+								{
+									"key": "projection",
+									"value": "cityRelated"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete city",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cities/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cities",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace city",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"country\": \"/countries/IT\",\n\t\"name\": \"Rome\",\n\t\"shortDesc\": \"is a historical powerhouse\",\n\t\"timeZone\": \"Europe/Rome\",\n\t\"fileName\": \"rome.jpg\",\n\t\"temperatureCelcius\": -2,\n\t\"weather\": \"Scattered clouds\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/cities/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cities",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attraction Categories",
+			"item": [
+				{
+					"name": "Create attraction category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractionCategories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractionCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace attraction category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractionCategories/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractionCategories",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Replace attraction category",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractionCategories/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractionCategories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/attractionCategories/1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Aug 2019 08:40:06 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Must see\",\n    \"fileName\": \"must-see.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractionCategories/1\"\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractionCategories/1\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Attractions",
+			"item": []
+		},
+		{
+			"name": "API Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "API Root",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/hal+json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 18 Aug 2019 06:25:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_links\": {\n        \"cities\": {\n            \"href\": \"http://localhost:8080/cities{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"attractions\": {\n            \"href\": \"http://localhost:8080/attractions{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"countries\": {\n            \"href\": \"http://localhost:8080/countries{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"attractionCategories\": {\n            \"href\": \"http://localhost:8080/attractionCategories{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"profile\": {\n            \"href\": \"http://localhost:8080/profile\"\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dc683d0e-7172-42e4-8e8e-77d92146442a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8fe34766-4b0e-4201-a7b5-83f9fee29ec6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "725505b6-81d3-4f8c-af13-1a680181ab5c",
+			"key": "url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
