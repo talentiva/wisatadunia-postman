@@ -631,7 +631,44 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get city",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/cities/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cities",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 00:44:35 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Rome\",\n    \"shortDesc\": \"is a historical powerhouse\",\n    \"timeZone\": \"Europe/Rome\",\n    \"fileName\": \"rome.jpg\",\n    \"temperatureCelsius\": -2,\n    \"weather\": \"Scattered clouds\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/cities/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/cities/1{?projection}\",\n            \"templated\": true\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/cities/1/country\"\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Get city and related",
@@ -655,7 +692,50 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get city and related",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/cities/1?projection=cityRelated",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cities",
+										"1"
+									],
+									"query": [
+										{
+											"key": "projection",
+											"value": "cityRelated"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 00:44:50 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Rome\",\n    \"shortDesc\": \"is a historical powerhouse\",\n    \"timeZone\": \"Europe/Rome\",\n    \"fileName\": \"rome.jpg\",\n    \"temperatureCelsius\": -2,\n    \"weather\": \"Scattered clouds\",\n    \"country\": {\n        \"id\": \"IT\",\n        \"name\": \"Italy\"\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/cities/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/cities/1{?projection}\",\n            \"templated\": true\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/cities/1/country\"\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete city",
@@ -689,7 +769,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"country\": \"/countries/IT\",\n\t\"name\": \"Rome\",\n\t\"shortDesc\": \"is a historical powerhouse\",\n\t\"timeZone\": \"Europe/Rome\",\n\t\"fileName\": \"rome.jpg\",\n\t\"temperatureCelcius\": -2,\n\t\"weather\": \"Scattered clouds\"\n}"
+							"raw": "{\n\t\"country\": \"/countries/IT\",\n\t\"name\": \"Rome\",\n\t\"shortDesc\": \"is a historical powerhouse\",\n\t\"timeZone\": \"Europe/Rome\",\n\t\"fileName\": \"rome.jpg\",\n\t\"temperatureCelsius\": -2,\n\t\"weather\": \"Scattered clouds\"\n}"
 						},
 						"url": {
 							"raw": "{{url}}/cities/1",
@@ -702,7 +782,59 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Replace city",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"country\": \"/countries/IT\",\n\t\"name\": \"Rome\",\n\t\"shortDesc\": \"is a historical powerhouse\",\n\t\"timeZone\": \"Europe/Rome\",\n\t\"fileName\": \"rome.jpg\",\n\t\"temperatureCelsius\": -2,\n\t\"weather\": \"Scattered clouds\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/cities/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"cities",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/cities/1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 00:44:21 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Rome\",\n    \"shortDesc\": \"is a historical powerhouse\",\n    \"timeZone\": \"Europe/Rome\",\n    \"fileName\": \"rome.jpg\",\n    \"temperatureCelsius\": -2,\n    \"weather\": \"Scattered clouds\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/cities/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/cities/1{?projection}\",\n            \"templated\": true\n        },\n        \"country\": {\n            \"href\": \"http://localhost:8080/cities/1/country\"\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -732,6 +864,167 @@
 							],
 							"path": [
 								"attractionCategories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create attraction category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractionCategories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractionCategories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/attractionCategories/2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 00:46:39 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Must see\",\n    \"fileName\": \"must-see.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractionCategories/2\"\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractionCategories/2\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List attraction categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractionCategories",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractionCategories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List attraction categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractionCategories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractionCategories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:03:43 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_embedded\": {\n        \"attractionCategories\": [\n            {\n                \"id\": 3,\n                \"name\": \"Must see\",\n                \"fileName\": \"must-see.jpg\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/attractionCategories/3\"\n                    },\n                    \"attractionCategory\": {\n                        \"href\": \"http://localhost:8080/attractionCategories/3\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractionCategories{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"profile\": {\n            \"href\": \"http://localhost:8080/profile/attractionCategories\"\n        }\n    },\n    \"page\": {\n        \"size\": 20,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"number\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get attraction category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractionCategories/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractionCategories",
+								"1"
 							]
 						}
 					},
@@ -817,12 +1110,481 @@
 							"body": "{\n    \"id\": 1,\n    \"name\": \"Must see\",\n    \"fileName\": \"must-see.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractionCategories/1\"\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractionCategories/1\"\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Delete attraction category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractionCategories/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractionCategories",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Attractions",
-			"item": []
+			"item": [
+				{
+					"name": "Create attraction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"The Colosseum\",\n    \"city\": \"/cities/1\",\n    \"attractionCategory\": \"/attractionCategories/3\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create attraction",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"The Colosseum\",\n    \"city\": \"/cities/1\",\n    \"attractionCategory\": \"/attractionCategories/3\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/attractions/1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:07:47 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"The Colosseum\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"attraction\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n            \"templated\": true\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List attractions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List attractions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:08:23 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_embedded\": {\n        \"attractions\": [\n            {\n                \"id\": 1,\n                \"name\": \"The Colosseum\",\n                \"subtitle\": \"One of the most recognizable sites in the world\",\n                \"favorited\": true,\n                \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n                \"distance\": 2.4,\n                \"duration\": 15,\n                \"rank\": 2,\n                \"latitude\": 41.8902102,\n                \"longitude\": 12.4922309,\n                \"location\": \"Piazza del Colosseo\",\n                \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n                \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n                \"phoneNumber\": \"06 3996 7700\",\n                \"email\": \"pa-colosseo@benicultural.it\",\n                \"website\": \"http://www.parcocolosseo.it/\",\n                \"fileName\": \"the-colosseum.jpg\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/attractions/1\"\n                    },\n                    \"attraction\": {\n                        \"href\": \"http://localhost:8080/attractions/1\"\n                    },\n                    \"city\": {\n                        \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n                        \"templated\": true\n                    },\n                    \"attractionCategory\": {\n                        \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions{?page,size,sort}\",\n            \"templated\": true\n        },\n        \"profile\": {\n            \"href\": \"http://localhost:8080/profile/attractions\"\n        }\n    },\n    \"page\": {\n        \"size\": 20,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"number\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get attraction",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get attraction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:10:07 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"The Colosseum\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"attraction\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n            \"templated\": true\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get attraction with related",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions/1?projection=attractionRelated",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions",
+								"1"
+							],
+							"query": [
+								{
+									"key": "projection",
+									"value": "attractionRelated"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get attraction with related",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions/1?projection=attractionRelated",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions",
+										"1"
+									],
+									"query": [
+										{
+											"key": "projection",
+											"value": "attractionRelated"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:12:58 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"The Colosseum\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\",\n    \"city\": {\n        \"id\": 1,\n        \"name\": \"Rome\",\n        \"shortDesc\": \"is a historical powerhouse\",\n        \"timeZone\": \"Europe/Rome\",\n        \"fileName\": \"rome.jpg\",\n        \"temperatureCelsius\": -2,\n        \"weather\": \"Scattered clouds\"\n    },\n    \"attractionCategory\": {\n        \"id\": 3,\n        \"name\": \"Must see\",\n        \"fileName\": \"must-see.jpg\"\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"attraction\": {\n            \"href\": \"http://localhost:8080/attractions/1{?projection}\",\n            \"templated\": true\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n            \"templated\": true\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete attraction",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace attraction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"The Colosseum\",\n    \"city\": \"/cities/1\",\n    \"attractionCategory\": \"/attractionCategories/3\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Replace attraction",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"The Colosseum\",\n    \"city\": \"/cities/1\",\n    \"attractionCategory\": \"/attractionCategories/3\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Location",
+									"value": "http://localhost:8080/attractions/1"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:09:38 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"The Colosseum\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"attraction\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n            \"templated\": true\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
 		},
 		{
 			"name": "API Root",
@@ -902,7 +1664,7 @@
 	],
 	"variable": [
 		{
-			"id": "725505b6-81d3-4f8c-af13-1a680181ab5c",
+			"id": "e7add8ff-06f2-4052-8828-c424ee3ab367",
 			"key": "url",
 			"value": "http://localhost:8080",
 			"type": "string"
