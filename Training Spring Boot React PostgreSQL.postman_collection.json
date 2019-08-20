@@ -1583,6 +1583,218 @@
 							"body": "{\n    \"id\": 1,\n    \"name\": \"The Colosseum\",\n    \"subtitle\": \"One of the most recognizable sites in the world\",\n    \"favorited\": true,\n    \"description\": \"Rome’s great gladiatorial arena is the most thrilling of the city's ancient sights. Inaugurated in AD 80, the 50,000-seat Colosseum, also known as the Flavian Amphitheatre, was originally clad in travertine and covered by a huge canvas awning. Inside, tiered seating encircled the arena, itself built over an underground complex where animals were caged and stage sets prepared. Games involved gladiators fighting wild animals or each other.\\n\\nTwo thousand years on and it's Italy's top tourist attraction.\",\n    \"distance\": 2.4,\n    \"duration\": 15,\n    \"rank\": 2,\n    \"latitude\": 41.8902102,\n    \"longitude\": 12.4922309,\n    \"location\": \"Piazza del Colosseo\",\n    \"timeOpen\": \"`Monday - Sunday 8.30 am - 6.00 pm\\nSaturday - Sunday 8.30 am - 7.00 pm`\",\n    \"ticket\": \"Adult/reduced incl Roman Forum & Palatino €12/7.50, SUPER ticket €18/13.50\",\n    \"phoneNumber\": \"06 3996 7700\",\n    \"email\": \"pa-colosseo@benicultural.it\",\n    \"website\": \"http://www.parcocolosseo.it/\",\n    \"fileName\": \"the-colosseum.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"attraction\": {\n            \"href\": \"http://localhost:8080/attractions/1\"\n        },\n        \"city\": {\n            \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n            \"templated\": true\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Filter attractions by city (compact)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions/search/findAllByCityId?cityId=1&projection=attractionCompact",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions",
+								"search",
+								"findAllByCityId"
+							],
+							"query": [
+								{
+									"key": "cityId",
+									"value": "1"
+								},
+								{
+									"key": "projection",
+									"value": "attractionCompact"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filter attractions by city (compact)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions/search/findAllByCityId?cityId=1&projection=attractionCompact",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions",
+										"search",
+										"findAllByCityId"
+									],
+									"query": [
+										{
+											"key": "cityId",
+											"value": "1"
+										},
+										{
+											"key": "projection",
+											"value": "attractionCompact"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:21:17 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_embedded\": {\n        \"attractions\": [\n            {\n                \"id\": 1,\n                \"name\": \"The Colosseum\",\n                \"subtitle\": \"One of the most recognizable sites in the world\",\n                \"favorited\": true,\n                \"fileName\": \"the-colosseum.jpg\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/attractions/1\"\n                    },\n                    \"attraction\": {\n                        \"href\": \"http://localhost:8080/attractions/1{?projection}\",\n                        \"templated\": true\n                    },\n                    \"city\": {\n                        \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n                        \"templated\": true\n                    },\n                    \"attractionCategory\": {\n                        \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/search/findAllByCityId?cityId=1&projection=attractionCompact\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Filter attractions by city and category (compact)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/attractions/search/findAllByCityIdAndAttractionCategoryId?cityId=1&attractionCategoryId=3&projection=attractionCompact",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"attractions",
+								"search",
+								"findAllByCityIdAndAttractionCategoryId"
+							],
+							"query": [
+								{
+									"key": "cityId",
+									"value": "1"
+								},
+								{
+									"key": "attractionCategoryId",
+									"value": "3"
+								},
+								{
+									"key": "projection",
+									"value": "attractionCompact"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filter attractions by city and category (compact)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractions/search/findAllByCityIdAndAttractionCategoryId?cityId=1&attractionCategoryId=3&projection=attractionCompact",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractions",
+										"search",
+										"findAllByCityIdAndAttractionCategoryId"
+									],
+									"query": [
+										{
+											"key": "cityId",
+											"value": "1"
+										},
+										{
+											"key": "attractionCategoryId",
+											"value": "3"
+										},
+										{
+											"key": "projection",
+											"value": "attractionCompact"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Aug 2019 01:22:27 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_embedded\": {\n        \"attractions\": [\n            {\n                \"id\": 1,\n                \"name\": \"The Colosseum\",\n                \"subtitle\": \"One of the most recognizable sites in the world\",\n                \"favorited\": true,\n                \"fileName\": \"the-colosseum.jpg\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"http://localhost:8080/attractions/1\"\n                    },\n                    \"attraction\": {\n                        \"href\": \"http://localhost:8080/attractions/1{?projection}\",\n                        \"templated\": true\n                    },\n                    \"city\": {\n                        \"href\": \"http://localhost:8080/attractions/1/city{?projection}\",\n                        \"templated\": true\n                    },\n                    \"attractionCategory\": {\n                        \"href\": \"http://localhost:8080/attractions/1/attractionCategory\"\n                    }\n                }\n            }\n        ]\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractions/search/findAllByCityIdAndAttractionCategoryId?cityId=1&attractionCategoryId=3&projection=attractionCompact\"\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -1664,7 +1876,7 @@
 	],
 	"variable": [
 		{
-			"id": "e7add8ff-06f2-4052-8828-c424ee3ab367",
+			"id": "0e5b7c75-c19d-485b-be1a-6eb133f51e38",
 			"key": "url",
 			"value": "http://localhost:8080",
 			"type": "string"
