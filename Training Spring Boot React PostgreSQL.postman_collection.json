@@ -1028,7 +1028,49 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get attraction category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/attractionCategories/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"attractionCategories",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Conten",
+									"value": "application/hal+json;charset=UTF-8",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"Must see\",\n    \"fileName\": \"must-see.jpg\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/attractionCategories/2\"\n        },\n        \"attractionCategory\": {\n            \"href\": \"http://localhost:8080/attractionCategories/2\"\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Replace attraction category",
@@ -1304,9 +1346,6 @@
 				},
 				{
 					"name": "Get attraction",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1317,10 +1356,6 @@
 								"value": "application/json"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
-						},
 						"url": {
 							"raw": "{{url}}/attractions/1",
 							"host": [
@@ -1384,9 +1419,6 @@
 				},
 				{
 					"name": "Get attraction with related",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1397,10 +1429,6 @@
 								"value": "application/json"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"name\": \"Must see\",\n\t\"fileName\": \"must-see.jpg\"\n}"
-						},
 						"url": {
 							"raw": "{{url}}/attractions/1?projection=attractionRelated",
 							"host": [
@@ -1876,7 +1904,7 @@
 	],
 	"variable": [
 		{
-			"id": "0e5b7c75-c19d-485b-be1a-6eb133f51e38",
+			"id": "550edc8c-03a9-4d41-8bab-c1b1b338170f",
 			"key": "url",
 			"value": "http://localhost:8080",
 			"type": "string"
